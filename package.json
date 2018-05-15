@@ -1,0 +1,46 @@
+{
+  "name": "install-and-require",
+  "version": "1.0.0",
+  "description": "Install and require packages",
+  "main": "lib/index.js",
+  "source": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kimfiedler/install-and-require.git"
+  },
+  "homepage": "https://github.com/kimfiedler/install-and-require",
+  "author": "Kim Fiedler Vestergaard",
+  "license": "MIT",
+  "scripts": {
+    "build": "rimraf lib && babel src -d lib && flow-copy-source src lib",
+    "watch": "babel src -d lib --watch",
+    "flow": "flow",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.46",
+    "@babel/core": "^7.0.0-beta.46",
+    "@babel/preset-flow": "^7.0.0-beta.46",
+    "babel-core": "^7.0.0-0",
+    "babel-jest": "^22.4.3",
+    "flow-bin": "^0.70.0",
+    "flow-copy-source": "^1.3.0",
+    "invariant": "^2.2.4",
+    "jest": "^22.4.3",
+    "tmp": "^0.0.33"
+  },
+  "files": ["lib/", "bundle/"],
+  "dependencies": {
+    "cross-spawn": "^6.0.5",
+    "fs-extra": "^5.0.0",
+    "npm-package-arg": "^6.1.0",
+    "rimraf": "^2.6.2"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/__tests__/fixtures",
+      "/__tests__/testInstall"
+    ]
+  }
+}
